@@ -8,8 +8,8 @@ use minifb::{Window, WindowOptions, Key};
 const CELLS: usize = 9;
 const WIDTH: usize = CELLS * 2 + 1;
 const HEIGHT: usize = CELLS * 2 + 1;
-const SCALE: usize = 40; // pixels per cell
-const FRAME_DELAY: u64 = 30; // ms
+const SCALE: usize = 40; 
+const FRAME_DELAY: u64 = 30; 
 
 #[derive(Clone, Copy, Debug)]
 enum Cell {
@@ -18,11 +18,9 @@ enum Cell {
 }
 
 fn main() {
-    // Initialize maze
     let mut maze = vec![vec![Cell::Wall; WIDTH]; HEIGHT];
     let mut visited: HashSet<(usize, usize)> = HashSet::new();
 
-    // Setup window
     let window_width = WIDTH * SCALE;
     let window_height = HEIGHT * SCALE;
     let mut window = Window::new(
